@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Safe Web Demo</title>
+	<meta name="theme-color" content="#5792CC">
+
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="blue">
+	<meta name="apple-mobile-web-app-title" content="Safe Demo">
+	<link rel="apple-touch-icon" href="icon.png">
+
+	<link rel="manifest" href="/manifest.json">
+
+	<link rel="stylesheet" href="materialize.min.css">
+		<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+	<h1>Safe Web Demo</h1>
+
+	<div class="container">
+		<center>
+			<button id="authorise" class="waves-effect waves-yellow btn blue">Authorise</button>
+			<button id="istokenvalid" class="waves-effect waves-yellow btn blue">Check authentication</button>
+			<button id="showfiles" class="waves-effect waves-yellow btn blue">Show</button>
+			<button id="getfile" class="waves-effect waves-yellow btn blue">Get</button>
+			<button id="uploadfile" class="waves-effect waves-yellow btn blue">Upload File</button>
+			<button id="updatefile" class="waves-effect waves-yellow btn blue">Update</button>
+			<button id="deletefile" class="waves-effect waves-yellow btn blue">Delete</button>
+			<button id="freetoken" class="waves-effect waves-yellow btn blue">free token</button>
+
+			<div>
+				<input id="filepath" placeholder="Select your file (please leave the extension in)" type="text" value="">
+			</div>
+
+			<div class="file-field input-field">
+				<div class="btn blue">
+					<span>File</span>
+					<input id="file" type="file" name="safetest" formenctype="multipart/form-data" accept="file_extension">
+				</div>
+				<div class="file-path-wrapper">
+					<input class="file-path validate" type="text">
+				</div>
+			</div>
+
+			<div id="fileshow" class="fileshow"></div>
+		</center>
+	</div>
+
+	<p class="credit">By Joseph Meagher</p>
+
+	<script src="jquery.min.js"></script>
+	<script src="materialize.min.js"></script>
+	<script src="main.js"></script>
+</body>
+
+</html>

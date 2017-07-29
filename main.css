@@ -1,0 +1,122 @@
+body {
+  color: yellow;
+  background-color: #5792CC;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1, h3 {
+  color: yellow;
+  font-family: Arial;
+  text-align: center;
+  line-height: 70px;
+  font-style: normal;
+}
+
+textarea, audio, video, img {
+  width: 100%;
+  padding: 20px;
+}
+
+audio {
+  margin-top: 30px;
+}
+
+.credit {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 5px;
+}
+
+.icons {
+  margin: 10px;
+  float: left;
+}
+
+.filedirnames {
+  text-align: center;
+}
+
+center {
+  padding: 15px;
+}
+
+.btn, .btn-large {
+  margin: 5px;
+}
+
+#downloadfile {
+  margin: auto;
+  display: block;
+}
+
+a.button {
+  text-decoration: none;
+  color: inherit;
+  padding: 20px 20px 20px 20px;
+}
+
+.radio-buttons {
+  padding: 5px 0;
+}
+
+input[type="radio"]:checked+label {
+  color: yellow;
+}
+
+input[type="radio"]:not(:checked)+label {
+  color: #d1d1d1;
+}
+
+input[type="radio"]:checked+label:before, [type="radio"]:not(:checked)+label:after {
+  border-radius: 50%;
+  border: 2px solid yellow;
+}
+
+input[type="radio"]:checked+label:after {
+  border-radius: 50%;
+  border: yellow;
+  background-color: yellow;
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.material-icons.md-24 {
+  font-size: 24px;
+}
+
+.material-icons.md-36 {
+  font-size: 36px;
+}
+
+.material-icons.md-48 {
+  font-size: 48px;
+}
+
+/* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(./fonts/icons.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}

@@ -1,0 +1,29 @@
+{
+  "name": "Safe Web App Demo",
+  "short_name": "Safe Web App Demo",
+  "icons": [{
+    "src": "icon.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    }, {
+      "src": "icon.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }, {
+      "src": "icon.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    }, {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }, {
+      "src": "icon.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }],
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#FFFF00",
+  "theme_color": "#5792CC"
+}
