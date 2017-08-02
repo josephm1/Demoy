@@ -103,26 +103,26 @@ function showfiles() {
       // console.log(mdHandle);
       fileshow.innerHTML = "";
 
-      //can be used for identifing the Container but is not needed here
+      //can be used for identifing the Container but is mot needed here
       // window.safeMutableData.getNameAndTag(mdHandle)
       //   .then((data) =>
-          // console.log(data));
+      // console.log(data));
 
-          window.safeMutableData.getEntries(mdHandle)
-          .then((entriesHandle) => {
-            window.safeMutableDataEntries.forEach(entriesHandle,
-              (key, value) => {
-                // console.log('Entry Handle: ', entriesHandle);
-                console.log('File found: ', uintToString(key));
-                // console.log('Value: ', uintToString(value.buf));
-                // console.log(key, value);
+      window.safeMutableData.getEntries(mdHandle)
+        .then((entriesHandle) => {
+          window.safeMutableDataEntries.forEach(entriesHandle,
+            (key, value) => {
+              // console.log('Entry Handle: ', entriesHandle);
+              console.log('File found: ', uintToString(key));
+              // console.log('Value: ', uintToString(value.buf));
+              // console.log(key, value);
 
-                $("#fileshow").append("<div class='icons'><i class='material-icons md-48'>description</i><p class='filedirnames'>" + uintToString(key) + "</p></div>");
-              });
+              $("#fileshow").append("<div class='icons'><i class='material-icons md-48'>description</i><p class='filedirnames'>" + uintToString(key) + "</p></div>");
+            });
 
-            // window.safeMutableDataEntries.free(entriesHandle);
-            // window.safeMutableData.free(mdHandle);
-          });
+          // window.safeMutableDataEntries.free(entriesHandle);
+          // window.safeMutableData.free(mdHandle);
+        });
     }, (err) => {
       console.error(err);
       // Materialize.toast(err, 3000, 'rounded');
@@ -159,11 +159,17 @@ function updatefile() {
     .then((mdHandle) => {
       window.safeMutableData.newMutation(auth)
         .then((mutationHandle) => {
+
+          window.safeMutableData.get(mdHandle, filepath.value)
+            .then((value) => {
+
               window.safeMutableDataMutation.update(mutationHandle, filepath.value, content, value.version + 1);
               window.safeMutableData.applyEntriesMutation(mdHandle, mutationHandle);
+
             }, (err) => {
               console.error(err);
               // Materialize.toast(err, 3000, 'rounded');
+            });
         })
         .then(() =>
           Materialize.toast('Entry was inserted in the MutableData and committed to the network', 3000, 'rounded'));
@@ -194,11 +200,14 @@ function saveedit() {
     .then((mdHandle) => {
       window.safeMutableData.newMutation(auth)
         .then((mutationHandle) => {
+          window.safeMutableData.get(mdHandle, filepath.value)
+            .then((value) => {
               window.safeMutableDataMutation.update(mutationHandle, filepath.value, textarea.value, value.version + 1);
               window.safeMutableData.applyEntriesMutation(mdHandle, mutationHandle);
             }, (err) => {
               console.error(err);
               // Materialize.toast(err, 3000, 'rounded');
+            });
         })
         .then(() =>
           Materialize.toast('Text was updated in the MutableData and committed to the network', 3000, 'rounded'));
@@ -216,11 +225,14 @@ function deletefile() {
     .then((mdHandle) => {
       window.safeMutableData.newMutation(auth)
         .then((mutationHandle) => {
+          window.safeMutableData.get(mdHandle, filepath.value)
+            .then((value) => {
               window.safeMutableDataMutation.remove(mutationHandle, filepath.value, value.version + 1);
               window.safeMutableData.applyEntriesMutation(mdHandle, mutationHandle);
             }, (err) => {
               console.error(err);
               // Materialize.toast(err, 3000, 'rounded');
+            });
         })
         .then(() => {
           Materialize.toast('Entry was removed from the MutableData and committed to the network', 3000, 'rounded');
