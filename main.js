@@ -119,6 +119,8 @@ function showfiles() {
 
               $("#fileshow").append("<div class='icons'><i class='material-icons md-48'>description</i><p class='filedirnames'>" +
               uintToString(key) + "</p></div>");
+
+              $("#fileshow").append("<div class='icons'><i class='material-icons md-48'>description</i><p class='filedirnames'>" + uintToString(key) + "</p></div>");
             });
 
           // window.safeMutableDataEntries.free(entriesHandle);
