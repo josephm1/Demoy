@@ -38,7 +38,7 @@ function authorise() {
     name: "Demoy",
     id: "joe",
     version: "1",
-    vendor: "joe",
+    vendor: "demoy.joe",
   };
 
   var permissions = {
