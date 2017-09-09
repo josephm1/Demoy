@@ -1,5 +1,6 @@
 //Intial function
 "Use strict";
+/*jshint esversion: 6 */
 
 var auth;
 var file = document.getElementById("file");
@@ -118,7 +119,7 @@ function showfiles() {
               // console.log(key, value);
 
               $("#fileshow").append("<div class='icons'><i class='material-icons md-48'>description</i><p class='filedirnames'>" +
-              uintToString(key) + "</p></div>");
+                uintToString(key) + "</p></div>");
 
               $("#fileshow").append("<div class='icons'><i class='material-icons md-48'>description</i><p class='filedirnames'>" + uintToString(key) + "</p></div>");
             });
