@@ -328,7 +328,7 @@ function readfile(name, filecontent) {
     var reader = new FileReader();
     reader.onload = function() {
       var url = window.URL.createObjectURL(file);
-      fileshow.innerHTML = '<textarea id="textarea" class="materialize-textarea">' + this.result + '</textarea><button id="saveedit" class="waves-effect waves-yellow btn blue">Save Edit</button><a id="downloadfile" class="waves-effect waves-light btn blue" href="' + url + '" download="' + file.name + '">Download file</a>';
+      fileshow.innerHTML = '<textarea id="textarea" class="materialize-textarea">' + this.result + '</textarea><button id="saveedit" class="waves-effect waves-light btn yellow blue-text">Save Edit</button><a id="downloadfile" class="waves-effect waves-light btn  btn yellow blue-text" href="' + url + '" download="' + file.name + '">Download file</a>';
       $('textarea').each(function() {
         $(this).height($(this).prop('scrollHeight'));
       });
@@ -344,7 +344,7 @@ function readfile(name, filecontent) {
     var url = window.URL.createObjectURL(file);
     var fileReader = new FileReader();
     fileReader.onload = function(event) {
-      fileshow.innerHTML = '<img class="responsive-img" src="' + this.result + '"></img><a id="downloadfile" class="waves-effect waves-light btn blue" href="' + url + '" download="' + file.name + '">Download file</a>';
+      fileshow.innerHTML = '<img class="responsive-img" src="' + this.result + '"></img><a id="downloadfile" class="waves-effect waves-light  btn yellow blue-text" href="' + url + '" download="' + file.name + '">Download file</a>';
     };
     fileReader.readAsDataURL(file);
   }
@@ -352,7 +352,7 @@ function readfile(name, filecontent) {
   //reads file as audio
   function readAsAudio() {
     var url = window.URL.createObjectURL(file);
-    fileshow.innerHTML = '<audio id="sound" controls></audio><a id="downloadfile" class="waves-effect waves-light btn blue" href="' + url + '" download="' + file.name + '">Download file</a>';
+    fileshow.innerHTML = '<audio id="sound" controls></audio><a id="downloadfile" class="waves-effect waves-light btn yellow blue-text" href="' + url + '" download="' + file.name + '">Download file</a>';
     var sound = document.getElementById('sound');
     sound.src = URL.createObjectURL(file);
   }
@@ -371,7 +371,7 @@ function readfile(name, filecontent) {
   function download() {
     console.log(file.name);
     var url = window.URL.createObjectURL(file);
-    fileshow.innerHTML = '<a id="downloadfile" class="waves-effect waves-light btn blue" href="' + url + '" download="' + file.name + '">Download file</a>';
+    fileshow.innerHTML = '<a id="downloadfile" class="waves-effect waves-light btn yellow blue-text" href="' + url + '" download="' + file.name + '">Download file</a>';
   }
 }
 
